@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --background: #0a0a0a;
+  --primary: #22c55e;
+  --textSecondary: #94a3b8;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border: #27272a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #0d6efd; /* your custom highlight color */
+  color: #ffffff; /* text color while selected */
+}
+
+/* For Firefox you may also want to include */
+::-moz-selection {
+  background: #0d6efd;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.heading-hover-cursor:hover {
+  /* This uses an SVG data URI to create a custom pixelated arrow cursor */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='50' viewBox='0 0 600 950'%3E%3Cpath fill='white' d='m 50,99.996094 0,699.974606 49.998047,0 0,-49.99804 50.000003,0 0,-49.99805 49.99804,0 0,-50 50,0 0,50 49.99805,0 0,99.99609 49.99805,0 0,100.03125 99.99804,0 0,-99.99609 -49.99804,0 0,-100.03125 -50,0 0,-99.99805 199.99609,0 0,-49.99804 -49.99805,0 0,-49.99805 -50,0 0,-49.99805 -49.99804,0 0,-49.99804 -50,0 0,-49.99805 -49.99805,0 0,-49.99805 -49.99805,0 0,-49.99805 -50,0 0,-49.99804 -49.99804,0 0,-49.99805 -50.000003,0 0,-49.998046 z'/%3E%3C/svg%3E"),
+    auto;
+}
